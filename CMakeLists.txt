@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.2)
+
+set(ARCH "x64") # for test
+
+set(CMAKE_CXX_STANDARD 11)
+if (${CMAKE_BUILD_TYPE} STREQUAL Debug)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+elseif (${CMAKE_BUILD_TYPE} STREQUAL Release)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -O3")
+endif ()
+
+set(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR})
+set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin/${ARCH}/${CMAKE_BUILD_TYPE})
+
+add_subdirectory(src)

@@ -1,0 +1,6 @@
+syntax = "proto3";
+package Protobuf;
+
+message Test{
+    string uid = 1;
+}
