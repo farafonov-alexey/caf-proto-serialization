@@ -166,8 +166,9 @@ config_option make_config_option(T& storage, string_view category,
 
 // -- enums --------------------------------------------------------------------
 
-enum class stream_priority;
 enum class atom_value : uint64_t;
+enum class sec : uint8_t;
+enum class stream_priority;
 
 // -- aliases ------------------------------------------------------------------
 
@@ -249,6 +250,8 @@ namespace detail {
 template <class> class type_erased_value_impl;
 template <class> class stream_distribution_tree;
 
+class abstract_worker;
+class abstract_worker_hub;
 class disposer;
 class dynamic_message_data;
 class group_manager;
